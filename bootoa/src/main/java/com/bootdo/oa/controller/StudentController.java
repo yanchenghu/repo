@@ -38,7 +38,13 @@ public class StudentController {
 	@GetMapping()
 	@RequiresPermissions("oa:student:student")
 	String Student(){
-	    return "oa/student/student";
+
+
+
+
+
+//	    return "oa/student/student";
+	    return "null";
 	}
 	
 	@ResponseBody

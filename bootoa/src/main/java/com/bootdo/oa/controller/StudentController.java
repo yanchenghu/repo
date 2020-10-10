@@ -118,6 +118,9 @@ public class StudentController {
 	@RequiresPermissions("oa:student:batchRemove")
 	public R remove(@RequestParam("ids[]") Integer[] sids){
 		studentService.batchRemove(sids);
+
+
+//		return R.ok();
 		return R.ok();
 	}
 	

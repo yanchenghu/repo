@@ -77,8 +77,8 @@ public class StudentController {
 		if(studentService.save(student)>0){
 			return R.ok();
 		}
-//		return R.error();
-		return null;
+	return R.error();
+
 	}
 	/**
 	 * 修改

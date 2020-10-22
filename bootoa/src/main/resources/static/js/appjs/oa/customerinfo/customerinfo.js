@@ -202,3 +202,21 @@ function batchRemove() {
 
 	});
 }
+
+
+function exportexcel() {
+	var rows = $('#exampleTable').bootstrapTable('getSelections'); // 返回所有选择的行，当没有选择的记录时，返回一个空数组
+	if (rows.length == 0) {
+		layer.msg("请选择要导出的数据");
+		return;
+	}
+	var ids = new Array();
+	// 遍历所有选择的行数据，取每条数据对应的ID
+	$.each(rows, function(i, row) {
+		ids[i] = row['customerCode'];
+	});
+	var url= prefix + '/exportexcel?ids='+ids;
+    console.log(url);
+	window.location.href=url;
+
+}

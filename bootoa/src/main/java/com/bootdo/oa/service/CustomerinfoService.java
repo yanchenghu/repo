@@ -27,4 +27,6 @@ public interface CustomerinfoService {
 	int remove(String customerCode);
 	
 	int batchRemove(String[] customerCodes);
+
+    List<Map<String, Object>> getExportExcel(String[] customerCodes);
 }

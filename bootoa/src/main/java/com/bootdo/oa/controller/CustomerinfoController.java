@@ -1,10 +1,17 @@
 package com.bootdo.oa.controller;
 
 import java.io.File;
+import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.io.IoUtil;
+import cn.hutool.poi.excel.BigExcelWriter;
+import cn.hutool.poi.excel.ExcelUtil;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -23,6 +30,9 @@ import com.bootdo.common.utils.PageUtils;
 import com.bootdo.common.utils.Query;
 import com.bootdo.common.utils.R;
 import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  *
@@ -128,6 +138,39 @@ public class CustomerinfoController {
 	public R remove(@RequestParam("ids[]") String[] customerCodes){
 		customerinfoService.batchRemove(customerCodes);
 		return R.ok();
+	}
+
+	/**
+	 * 导出Excel
+	 *
+	 * @author ych
+	 * @date 2019-06-6 15:11
+	 */
+	@RequestMapping("/exportexcel")
+	@ResponseBody
+	@RequiresPermissions("oa:customerinfo:exportexcel")
+	public void diabetesVisitExportExcel(HttpServletResponse response, String[] ids) {
+
+		List<Map<String, Object>> pageInfo = customerinfoService.getExportExcel(ids);
+		try{
+			ArrayList<Map<String, Object>> rows = CollUtil.newArrayList(pageInfo);
+			BigExcelWriter writer = (BigExcelWriter) ExcelUtil.getBigWriter();
+			writer.addHeaderAlias("customer_name", "姓名");
+			writer.addHeaderAlias("customer_tel", "电话");
+			writer.addHeaderAlias("customer_university", "毕业学校");
+			writer.write(rows, true);
+			String format = DateUtil.format(new Date(), "yyyyMMddHHmmss");
+			//response为HttpServletResponse对象
+			response.setContentType("application/vnd.ms-excel;charset=utf-8");
+			response.setHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode("信息管理" + format + ".xlsx", "UTF-8"));
+			ServletOutputStream out = response.getOutputStream();
+			writer.flush(out, true);
+			IoUtil.close(out);
+			writer.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 
 }

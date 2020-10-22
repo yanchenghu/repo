@@ -160,5 +160,13 @@
 			#{customerCode}
 		</foreach>
 	</delete>
+    <select id="getExportExcel" resultType="java.util.HashMap" parameterType="java.lang.String" >
+         select  customer_name,customer_tel,customer_university from customerinfo where customer_code in
+		<foreach item="customerCode" collection="array" open="(" separator="," close=")">
+			#{customerCode}
+		</foreach>
+
+	</select>
+
 
 </mapper>

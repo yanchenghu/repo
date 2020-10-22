@@ -51,5 +51,10 @@ public class CustomerinfoServiceImpl implements CustomerinfoService {
 	public int batchRemove(String[] customerCodes){
 		return customerinfoDao.batchRemove(customerCodes);
 	}
-	
+
+	@Override
+	public List<Map<String, Object>> getExportExcel(String[] customerCodes) {
+		return customerinfoDao.getExportExcel(customerCodes);
+	}
+
 }

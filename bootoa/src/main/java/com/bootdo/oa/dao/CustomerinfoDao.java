@@ -29,4 +29,6 @@ public interface CustomerinfoDao {
 	int remove(String customer_code);
 	
 	int batchRemove(String[] customerCodes);
+
+    List<Map<String, Object>> getExportExcel(String[] customerCodes);
 }

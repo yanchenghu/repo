@@ -1,4 +1,4 @@
-package com.bootdo.oa.service.impl;
+package com.bootdo.per.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,9 +6,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 
-import com.bootdo.oa.dao.CustomerinfoDao;
-import com.bootdo.oa.domain.CustomerinfoDO;
-import com.bootdo.oa.service.CustomerinfoService;
+import com.bootdo.per.dao.CustomerinfoDao;
+import com.bootdo.per.domain.CustomerinfoDO;
+import com.bootdo.per.service.CustomerinfoService;
 
 
 
@@ -51,10 +51,5 @@ public class CustomerinfoServiceImpl implements CustomerinfoService {
 	public int batchRemove(String[] customerCodes){
 		return customerinfoDao.batchRemove(customerCodes);
 	}
-
-	@Override
-	public List<Map<String, Object>> getExportExcel(String[] customerCodes) {
-		return customerinfoDao.getExportExcel(customerCodes);
-	}
-
+	
 }

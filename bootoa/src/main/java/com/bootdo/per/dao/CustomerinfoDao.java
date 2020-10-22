@@ -1,6 +1,6 @@
-package com.bootdo.oa.dao;
+package com.bootdo.per.dao;
 
-import com.bootdo.oa.domain.CustomerinfoDO;
+import com.bootdo.per.domain.CustomerinfoDO;
 
 import java.util.List;
 import java.util.Map;
@@ -8,10 +8,10 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * 
- * @author ych
+ * 简历表
+ * @author chglee
  * @email 1992lcg@163.com
- * @date 2020-07-22 14:27:25
+ * @date 2020-10-22 17:00:26
  */
 @Mapper
 public interface CustomerinfoDao {
@@ -29,6 +29,4 @@ public interface CustomerinfoDao {
 	int remove(String customer_code);
 	
 	int batchRemove(String[] customerCodes);
-
-    List<Map<String, Object>> getExportExcel(String[] customerCodes);
 }

@@ -1,16 +1,16 @@
-package com.bootdo.oa.service;
+package com.bootdo.per.service;
 
-import com.bootdo.oa.domain.CustomerinfoDO;
+import com.bootdo.per.domain.CustomerinfoDO;
 
 import java.util.List;
 import java.util.Map;
 
 /**
+ * 简历表
  * 
- * 
- * @author ych
+ * @author chglee
  * @email 1992lcg@163.com
- * @date 2020-07-22 14:27:25
+ * @date 2020-10-22 17:00:26
  */
 public interface CustomerinfoService {
 	
@@ -27,6 +27,4 @@ public interface CustomerinfoService {
 	int remove(String customerCode);
 	
 	int batchRemove(String[] customerCodes);
-
-    List<Map<String, Object>> getExportExcel(String[] customerCodes);
 }

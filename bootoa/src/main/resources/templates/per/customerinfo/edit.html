@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content ">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content">
+						<form class="form-horizontal m-t" id="signupForm">
+						<input id="customer_code" name="customer_code" th:value="${customerinfo.customer_code}"  type="hidden">
+							<div class="form-group">	
+								<label class="col-sm-3 control-label">简历姓名：</label>
+								<div class="col-sm-8">
+									<input id="customerName" name="customerName" th:value="${customerinfo.customerName}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">简历性别（0-男，1-女）：</label>
+								<div class="col-sm-8">
+									<input id="customerSex" name="customerSex" th:value="${customerinfo.customerSex}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">联系电话：</label>
+								<div class="col-sm-8">
+									<input id="customerTel" name="customerTel" th:value="${customerinfo.customerTel}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">出生日期：</label>
+								<div class="col-sm-8">
+									<input id="customerBirth" name="customerBirth" th:value="${customerinfo.customerBirth}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">毕业院校：</label>
+								<div class="col-sm-8">
+									<input id="customerUniversity" name="customerUniversity" th:value="${customerinfo.customerUniversity}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">专业：</label>
+								<div class="col-sm-8">
+									<input id="customerSpecialities" name="customerSpecialities" th:value="${customerinfo.customerSpecialities}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">入职时间：</label>
+								<div class="col-sm-8">
+									<input id="entryTime" name="entryTime" th:value="${customerinfo.entryTime}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">工作年限：</label>
+								<div class="col-sm-8">
+									<input id="workYear" name="workYear" th:value="${customerinfo.workYear}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">简历来源：</label>
+								<div class="col-sm-8">
+									<input id="resumeSource" name="resumeSource" th:value="${customerinfo.resumeSource}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">简历ID：</label>
+								<div class="col-sm-8">
+									<input id="resumeId" name="resumeId" th:value="${customerinfo.resumeId}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">简历地址：</label>
+								<div class="col-sm-8">
+									<input id="resumePath" name="resumePath" th:value="${customerinfo.resumePath}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">与梓钦关系（1-已离职、2-在职、3-提交简历未通过、4-待入职、5-无关系 6-入职）：</label>
+								<div class="col-sm-8">
+									<input id="relationshipZq" name="relationshipZq" th:value="${customerinfo.relationshipZq}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">添加时间：</label>
+								<div class="col-sm-8">
+									<input id="addTime" name="addTime" th:value="${customerinfo.addTime}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">更新时间：</label>
+								<div class="col-sm-8">
+									<input id="updateTime" name="updateTime" th:value="${customerinfo.updateTime}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">操作员编号：</label>
+								<div class="col-sm-8">
+									<input id="opertCode" name="opertCode" th:value="${customerinfo.opertCode}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">操作员姓名：</label>
+								<div class="col-sm-8">
+									<input id="opertName" name="opertName" th:value="${customerinfo.opertName}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">期望薪资：</label>
+								<div class="col-sm-8">
+									<input id="expectationSalary" name="expectationSalary" th:value="${customerinfo.expectationSalary}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">技术方向：</label>
+								<div class="col-sm-8">
+									<input id="professionId" name="professionId" th:value="${customerinfo.professionId}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">意向地区：</label>
+								<div class="col-sm-8">
+									<input id="intentionArea" name="intentionArea" th:value="${customerinfo.intentionArea}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">学历(1、初中2、高中3、专科4、本科5、研究生6、博士7、其它)：</label>
+								<div class="col-sm-8">
+									<input id="education" name="education" th:value="${customerinfo.education}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">入项次数：</label>
+								<div class="col-sm-8">
+									<input id="entryTimes" name="entryTimes" th:value="${customerinfo.entryTimes}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">入项状态（1-未入项   2-已入项  3-已离项   4-已离职）：</label>
+								<div class="col-sm-8">
+									<input id="joinStatus" name="joinStatus" th:value="${customerinfo.joinStatus}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">抢占人（如果为空，说明未被抢占，否则说明被抢占）：</label>
+								<div class="col-sm-8">
+									<input id="signPeople" name="signPeople" th:value="${customerinfo.signPeople}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">学信网是否可查（0-否，1-是）：</label>
+								<div class="col-sm-8">
+									<input id="chsiFlag" name="chsiFlag" th:value="${customerinfo.chsiFlag}" class="form-control" type="text">
+								</div>
+							</div>
+														<div class="form-group">	
+								<label class="col-sm-3 control-label">简历方向 : 1:国内 2:对日：</label>
+								<div class="col-sm-8">
+									<input id="resumeDirection" name="resumeDirection" th:value="${customerinfo.resumeDirection}" class="form-control" type="text">
+								</div>
+							</div>
+																					<div class="form-group">
+								<div class="col-sm-8 col-sm-offset-3">
+									<button type="submit" class="btn btn-primary">提交</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+	</div>
+	</div>
+	<div th:include="include::footer"></div>
+	<script type="text/javascript" src="/js/appjs/per/customerinfo/edit.js">
+	</script>
+</body>
+</html>
